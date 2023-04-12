@@ -4,9 +4,10 @@ author: "[Insert your name here]{style='background-color: yellow;'}"
 toc: true
 title-block-banner: true
 title-block-style: default
-format: html
 execute: 
   freeze: true
+  cache: true
+format: html
 # format: pdf
 ---
 
