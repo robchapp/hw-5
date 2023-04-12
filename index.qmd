@@ -7,8 +7,11 @@ title-block-style: default
 execute: 
   freeze: true
   cache: true
-format: html
-# format: pdf
+format:
+  html: # comment this line to get pdf
+  # pdf: 
+    fig-width: 7
+    fig-height: 7
 ---
 
 [Link to the Github repository](https://github.com/psu-stat380/hw-5)
@@ -419,7 +422,7 @@ If you were to choose a model to classify spam emails, which model would you cho
 
 ## Question 3
 ::: {.callout-tip}
-## 70 points
+## 60 points
 
 Three spirals classification
 
@@ -538,7 +541,7 @@ For the next questions, you will need to fit a series of neural networks. In all
 * set the number of units in each hidden layer to 10 
 * set the output dimension `o` to 3 (remember this is multinomial classification)
 * use the appropriate loss function for the problem (**not `nn_bce_loss`**)
-* set the number of epochs to 100
+* set the number of epochs to $50$
 * fit the model using the `luz` package
 
 You can use any optimizer of your choice, but you **will need to tune the learning rate for each problem**.
@@ -601,11 +604,11 @@ Plot the results using the `plot_decision_boundary()` function.
 
 ###### 3.5 (10 points)
 
-Fit a neural network with **2 hidden layers** to predict the `y` variable using the `x1` and `x2` predictors.
+Fit a neural network with **0 hidden layers** to predict the `y` variable using the `x1` and `x2` predictors.
 
 ```R
-NN2 <- nn_module(
-  initialize = function(p, q1, q2, o){
+NN0 <- nn_module(
+  initialize = function(p, o){
     ... # Insert your code here
   },
   forward = function(x){
@@ -614,7 +617,7 @@ NN2 <- nn_module(
   }
 )
 
-fit_2 <- NN2 %>% 
+fit_0 <- NN0 %>% 
   setup(...) %>%
   set_hparams(...) %>%
   set_opt_params(...) %>%
@@ -631,8 +634,8 @@ Plot the results using the `plot_decision_boundary()` function.
 Fit a neural network with **3 hidden layers** to predict the `y` variable using the `x1` and `x2` predictors.
 
 ```R
-NN3 <- nn_module(
-  initialize = function(p, q1, q2, q3, o){
+NN2 <- nn_module(
+  initialize = function(p, q1, q2, o){
     ... # Insert your code here
   },
   forward = function(x){
@@ -641,7 +644,7 @@ NN3 <- nn_module(
   }
 )
 
-fit_3 <- NN3 %>% 
+fit_2 <- NN3 %>% 
   setup(...) %>%
   set_hparams(...) %>%
   set_opt_params(...) %>%
@@ -652,33 +655,7 @@ Plot the results using the `plot_decision_boundary()` function.
 
 ---
 
-###### 3.7 (10 points)
-
-Fit a neural network with **4 hidden layers** to predict the `y` variable using the `x1` and `x2` predictors.
-
-```R
-NN4 <- nn_module(
-  initialize = function(p, q1, q2, q3, q4, o){
-    ... # Insert your code here
-  },
-  forward = function(x){
-    x %>% 
-    ... # Insert your code here
-  }
-)
-
-fit_4 <- NN4 %>% 
-  setup(...) %>%
-  set_hparams(...) %>%
-  set_opt_params(...) %>%
-  fit(...)
-```
-
-Plot the results using the `plot_decision_boundary()` function.
-
----
-
-###### 3.8 (5 points)
+###### 3.7 (5 points)
 
 What are the differences between the models? How do the decision boundaries change as the number of hidden layers increases?
 
