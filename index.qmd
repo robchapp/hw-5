@@ -10,7 +10,7 @@ execute:
 # format: pdf
 ---
 
-[Link to the Github repository](https://github.com/psu-stat380/hw-4)
+[Link to the Github repository](https://github.com/psu-stat380/hw-5)
 
 ---
 
@@ -374,7 +374,7 @@ Using the same neural network architecture as in 1.9, fit a neural network model
 ::: {.callout-warning}
 ## Classification vs. Regression
 
-Note that the neural network in 1.9 was a regression model. You will need to modify the neural network architecture to be a classification model by changing the output layer to have a single node with a sigmoid activation function.
+Note that the neural network in **Q 1.9** was a regression model. You will need to modify the neural network architecture to be a classification model by changing the output layer to have a single node with a sigmoid activation function.
 :::
 
 Use the `model.matrix` function to create the covariate matrix and `luz` package for fitting the network with $32, 16, 8$ nodes in each of the three hidden layers. 
